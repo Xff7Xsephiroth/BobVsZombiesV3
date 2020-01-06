@@ -3,12 +3,25 @@ public class AddScore : MonoBehaviour
 {
     public delegate void SendScore(int theScore);
     public static event SendScore OnSendScore;
+    
+    
     public int score = 10;
-    private void OnDestroy()
+    private bool scoreSent = false;
+    
+    public void OnAddScore()
+    
     {
         if (OnSendScore != null)
         {
-            OnSendScore(score);
-        }
-    }
-}
+            if (!scoreSent)
+            {
+                scoreSent = true;
+                OnSendScore(score);
+            }
+
+          }
+      }
+  }
+
+
+
