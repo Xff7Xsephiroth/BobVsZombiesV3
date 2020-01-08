@@ -32,6 +32,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshProUGUI
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -185,7 +186,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10758}
     - Class: 114
+      Script: {instanceID: 10934}
+    - Class: 114
       Script: {instanceID: 11108}
+    - Class: 114
+      Script: {instanceID: 11142}
     - Class: 114
       Script: {instanceID: 11206}
     - Class: 114
