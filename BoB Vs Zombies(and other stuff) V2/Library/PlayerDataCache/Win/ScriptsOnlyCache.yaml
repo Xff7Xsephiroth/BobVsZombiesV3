@@ -5,6 +5,8 @@ ScriptsOnlyBuild:
     - Bullet
     - DestroyOnDie
     - Enemy
+    - GameOverButtons
+    - GameOverManager
     - GameUI
     - HealthSystem
     - HurtTrigger
@@ -13,6 +15,7 @@ ScriptsOnlyBuild:
     - MouseSmoothLook2D
     - MoveTowardsObject
     - Player
+    - SetScore
     - SmoothFollow2D
     - SmoothLookAtTarget2D
     - Spawner
@@ -53,6 +56,59 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   sceneClasses:
+    Assets/Scenes/GameOver.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9692}
+    - Class: 114
+      Script: {instanceID: 9856}
+    - Class: 114
+      Script: {instanceID: 9898}
+    - Class: 114
+      Script: {instanceID: 10314}
+    - Class: 114
+      Script: {instanceID: 10472}
+    - Class: 114
+      Script: {instanceID: 10706}
+    - Class: 114
+      Script: {instanceID: 10938}
+    - Class: 114
+      Script: {instanceID: 11148}
+    - Class: 114
+      Script: {instanceID: 11212}
+    - Class: 114
+      Script: {instanceID: 11618}
+    - Class: 114
+      Script: {instanceID: 19232}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/Main Menu.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -71,6 +127,10 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
@@ -93,21 +153,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10338}
     - Class: 114
-      Script: {instanceID: 10702}
-    - Class: 114
-      Script: {instanceID: 10930}
+      Script: {instanceID: 10706}
     - Class: 114
       Script: {instanceID: 10934}
     - Class: 114
-      Script: {instanceID: 10948}
+      Script: {instanceID: 10938}
     - Class: 114
-      Script: {instanceID: 11206}
+      Script: {instanceID: 10952}
     - Class: 114
-      Script: {instanceID: 11394}
+      Script: {instanceID: 11212}
     - Class: 114
-      Script: {instanceID: 11512}
+      Script: {instanceID: 11400}
     - Class: 114
-      Script: {instanceID: 11612}
+      Script: {instanceID: 11518}
+    - Class: 114
+      Script: {instanceID: 11618}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -147,6 +207,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -182,29 +246,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10460}
     - Class: 114
-      Script: {instanceID: 10602}
+      Script: {instanceID: 10566}
     - Class: 114
-      Script: {instanceID: 10758}
+      Script: {instanceID: 10606}
     - Class: 114
-      Script: {instanceID: 10934}
+      Script: {instanceID: 10762}
     - Class: 114
-      Script: {instanceID: 11108}
+      Script: {instanceID: 11112}
     - Class: 114
-      Script: {instanceID: 11142}
+      Script: {instanceID: 11212}
     - Class: 114
-      Script: {instanceID: 11206}
+      Script: {instanceID: 11300}
     - Class: 114
-      Script: {instanceID: 11294}
+      Script: {instanceID: 11374}
     - Class: 114
-      Script: {instanceID: 11368}
+      Script: {instanceID: 11420}
     - Class: 114
-      Script: {instanceID: 11414}
+      Script: {instanceID: 11454}
     - Class: 114
-      Script: {instanceID: 11448}
+      Script: {instanceID: 11650}
     - Class: 114
-      Script: {instanceID: 11644}
-    - Class: 114
-      Script: {instanceID: 11648}
+      Script: {instanceID: 11654}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -512,7 +574,7 @@ ScriptsOnlyBuild:
     className: Enemy
   - hash:
       serializedVersion: 2
-      Hash: b53206a3317c6abcc78d07694e8ba7d3
+      Hash: 56d8b8e8014c38a1b87f7efe5ac1a3b2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HealthSystem
@@ -548,10 +610,22 @@ ScriptsOnlyBuild:
     className: CameraController
   - hash:
       serializedVersion: 2
+      Hash: 79f1e4d923cfc803b34c05ae2cb73dac
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MusicTimer
+  - hash:
+      serializedVersion: 2
       Hash: e63944317d2f5958e31963668bb29158
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: VertexJitter
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameOverManager
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -726,6 +800,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MusicManager
   - hash:
       serializedVersion: 2
       Hash: 3b760e6526e13f7504f59e210145899a
@@ -972,9 +1052,16 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameOverButtons
   platform: 5
   scenePathNames:
   - Assets/Scenes/Main Menu.unity
   - Assets/Scenes/Zombie Shooter Level 1.unity
+  - Assets/Scenes/GameOver.unity
   playerPath: C:/Users/olive/OneDrive/Desktop/BOB GAME/BoB Vs Zombies(and other stuff)
     V2.exe
