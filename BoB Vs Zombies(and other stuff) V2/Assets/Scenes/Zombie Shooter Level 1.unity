@@ -915,20 +915,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  onDie:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 824168497}
-        m_MethodName: gameOver
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   onDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -943,6 +929,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  healthBar: {fileID: 749846816}
 --- !u!114 &824168494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16728,8 +16715,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a7698f0d09ebd448205607b72122c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
-  scoreText: {fileID: 0}
+  healthBar: {fileID: 749846816}
+  scoreText: {fileID: 1814341800}
   playerScore: 0
 --- !u!1 &2119065616
 GameObject:
@@ -16872,6 +16859,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1776442526819448228, guid: e2918c60e716e5345b9642d00fe26594,
+        type: 3}
+      propertyPath: onDamaged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1776442526819448228, guid: e2918c60e716e5345b9642d00fe26594,
+        type: 3}
+      propertyPath: onDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1776442526819448228, guid: e2918c60e716e5345b9642d00fe26594,
+        type: 3}
+      propertyPath: onDamaged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2918c60e716e5345b9642d00fe26594, type: 3}

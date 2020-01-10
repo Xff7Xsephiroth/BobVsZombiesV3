@@ -9,7 +9,7 @@ public class SetScore : MonoBehaviour
     // Start is called before the first frame update
    private void Start()
     {
-        PlayerScore.text = PlayerPrefs.GetInt("HighScore").ToString();
+        PlayerScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
     }
 
     // Update is called once per frame
